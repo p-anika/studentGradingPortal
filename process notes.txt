@@ -1,0 +1,32 @@
+1. Create a folder in which all of the code for this project will be stored. Open the folder in Visual Studio code
+2. When the folder is opened, the package.json file will be automatically created. Inside of it, there will be details about the folder, the version of the VS Code, etc. This same information can be found by typing the comand "npm init -y" in the Terminal
+3. Install node modules, with commands such as "npm install express". This will create the package-lock.json file and add express in the package.json file under dependencies. The node_modules folder will also be created.
+    - Express is framework for where the app is being created
+    - Full list of installments: "npm install morgan body-parser helmet mongoose mongodb nodemon cors dotenv", plus express from earlier
+4. Create the file server.js
+    - Code the importing of all the dependencies
+    - Create an instance of Express through the code
+    - Set the PORT the local server should run on. Two servers can NOT run on the same port
+    - Code the application to use all the functionalities we installed (like body-parser, morgan, etc.)
+5. Make another key in the scripts json in the file package.json. This key should be called start
+    - Code: "start": "nodemon server.js"
+    - Function: When we change the code is VS, nodemon will realize this and restart the server to implement the changes
+6. In terminal, so "npm start"
+    - implements the start key that we created above in step 5. This will cause the program to run through all the code found in the server.js file
+7. Connect to mongodb
+    - Create new project, and then a new database in that project through the mongodb website
+    - Connect the databse you created to your VS Code
+        - click on server, and then while it is highlighted, create a new file called db.js. copy paste code that is in the file right now
+        - in the string calld URI, copy paste the connection string from the mongodb website (under projectname > database > connect > step #3). Replace <password> with actual password
+        - in server.js, make sure the connectDB code is there
+        - in the terminal, write "npm start" again. if everything goes well, at the bottom it should say "database successfully connected"
+8. Create models folder, while the file server.js is highlighted
+    - Create Students.js file inside. Make the StudentSchema here
+9. Create the routes folder, while the file server.js is highlighted. Create an api sub folder inside
+10. Create the studentGradingPortal.js file inside the api folder
+    - Will contain all the endpoints
+    - Basically, server.js will launch the app, and if the URL used matches with a specific one set in server.js, the program will reroute to the studentGradingPortal file
+11. Set up studentGradingPortal.js file
+    - Import express and router at the top, and add in "module.exports = router" line at bottom
+    - Import all Schemas needed and the ObjectId and erroHandler
+    - write the apis!!
